@@ -907,6 +907,7 @@ svg {
     background: var(--bg-secondary);
 }
 
+.project-image img,
 .project-image svg {
     width: 100%;
     height: 100%;
@@ -914,6 +915,7 @@ svg {
     transition: transform var(--transition-slow);
 }
 
+.project-card:hover .project-image img,
 .project-card:hover .project-image svg {
     transform: scale(1.1);
 }
@@ -1526,7 +1528,7 @@ svg {
 /* Glowing text effect on hover */
 .hero-title:hover,
 .section-title:hover {
-    text-shadow: 
+    text-shadow:
         0 0 10px var(--primary),
         0 0 20px var(--primary),
         0 0 30px var(--primary);
@@ -1535,8 +1537,13 @@ svg {
 
 /* Scanline effect */
 @keyframes scanline {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(100vh); }
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100vh);
+    }
 }
 
 .hero::after {
@@ -1560,7 +1567,7 @@ svg {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
+    background-image:
         linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
@@ -1569,8 +1576,9 @@ svg {
 }
 
 /* Monospace font for tech feel */
-.nav-link, .tag, .stat-number {
+.nav-link,
+.tag,
+.stat-number {
     font-family: 'Courier New', Consolas, monospace;
     letter-spacing: 0.5px;
 }
-
